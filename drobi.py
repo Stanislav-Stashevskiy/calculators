@@ -5,9 +5,8 @@ def nod(drob, drob2):
         else:
             drob2 = drob2 % drob
 
-        nd = drob + drob2
-
-        return nd
+    nd = drob + drob2
+    return nd
 
 
 def nok(b, d):
@@ -28,63 +27,80 @@ def znamenatel(a, b, c, d):
 
 
 def plus(a, b, c, d):
+
     if b == d:
         drob = a + c
 
-        if b % drob == 0 and drob != 1:
-            b = b / drob
-            drob = drob / drob
+        drob2 = b
+        nd = nod(drob, drob2)
+        b = drob2
 
+        if nd == 1:
             print(drob)
             print('--')
             print(b)
 
-        elif b % drob != 0 or drob == 1:
-            print(drob)
+        elif nd != 1:
+            print(drob / nd)
             print('--')
-            print(b)
+            print(d / nd)
 
-    elif b != d:
+    elif b != d:                                    # начинать ТУТ
         a, b, c, d = znamenatel(a, b, c, d)
         drob = a + c
-        print(drob)
-        print('--')
-        print(b)
-        return a, b, c, d
+
+        drob2 = b
+        nd = nod(drob, drob2)
+        b = drob2
+
+        if nd == 1:
+            print(drob)
+            print('--')
+            print(drob2)
+
+        elif nd != 1:
+            print(drob / nd)
+            print('--')
+            print(drob2 / nd)
+
+    return a, b, c, d
 
 
 def minus(a, b, c, d):
     if b == d:
         drob = a - c
-        if b % drob == 0 and drob != 1:
-            b = b / drob
-            drob = drob / drob
 
+        drob2 = b
+        nd = nod(drob, drob2)
+        b = drob2
+
+        if nd == 1:
             print(drob)
             print('--')
-            print(b)
+            print(drob2)
 
-        elif b % drob != 0 or drob == 1:
-            print(drob)
+        elif nd != 1:
+            print(drob / nd)
             print('--')
-            print(b)
+            print(drob2 / nd)
 
     elif b != d:
         a, b, c, d, = znamenatel(a, b, c, d)
         drob = b - c
 
-        if b % drob == 0 and drob != 1:
-            b = b / drob
-            drob = drob / drob
+        drob2 = b
+        nd = nod(drob, drob2)
+        b = drob2
 
+        if nd == 1:
             print(drob)
             print('--')
-            print(b)
+            print(drob2)
 
-        elif b % drob != 0 or drob == 1:
-            print(drob)
+        elif nd != 1:
+            print(drob / nd)
             print('--')
-            print(b)
+            print(drob2 / nd)
 
     return a, b, d, c
 
@@ -93,35 +109,20 @@ def mnoshity(a, b, c, d):
     drob = a * c
     drob2 = b * d
 
-    if drob > drob2:
-        nd = nod(drob, drob2)
+    nd = nod(drob, drob2)
 
-        if drob2 % drob == 0 and drob != 1:
-            drob2 = drob2 / drob
-            drob = drob / drob
+    if drob2 % drob == 0 and drob != 1:
+        drob2 = drob2 / drob
+        drob = drob / drob
 
-            print(drob)
-            print('--')
-            print(drob2)
+        print(drob)
+        print('--')
+        print(drob2)
 
-        elif b % drob != 0 or drob == 1:
-            print(drob / nd)
-            print('--')
-            print(b / nd)
-
-    elif drob < drob2:
-        if drob2 % drob == 0 and drob != 1:
-            drob2 = drob2 / drob
-            drob = drob / drob
-
-            print(drob)
-            print('--')
-            print(drob2)
-
-        elif drob2 % drob != 0 or drob == 1:
-            print(drob)
-            print('--')
-            print(drob2)
+    elif drob2 % drob != 0 and drob != 1:
+        print(drob / nd)
+        print('--')
+        print(drob2 / nd)
 
     return a, b, d, c
 
