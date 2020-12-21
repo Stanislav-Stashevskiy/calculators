@@ -183,6 +183,7 @@ def main():
         mnoshity(a, b, c, d)
     elif what == '/':
         delit(a, b, c, d)
+    main()
 
 
 if __name__ == '__main__':
